@@ -1,0 +1,189 @@
+C PROGRAMMING - LESSON 1 NOTES
+===============================
+
+Topic: Basic C Structure, main(void), Parameters, and printf()
+
+1. BASIC STRUCTURE NG C PROGRAM
+-------------------------------
+
+#include <stdio.h>
+
+int main(void)
+{
+    return 0;
+}
+
+Paliwanag:
+
+#include <stdio.h>
+- Kailangan ito para magamit ang printf().
+- Ang stdio.h ay Standard Input/Output header file.
+
+int main(void)
+- Dito nagsisimula ang program.
+- int = ang main function ay magbabalik ng integer value.
+- main = pangalan ng main function.
+- void = walang parameter/input na tinatanggap ang main function.
+
+return 0;
+- Ibig sabihin natapos nang maayos ang program.
+
+
+2. ANO ANG PARAMETER?
+---------------------
+
+Ang parameter ay input na tinatanggap ng isang function.
+
+Halimbawa:
+
+int add(int a, int b)
+{
+    return a + b;
+}
+
+Dito:
+- int a at int b = parameters
+- Sila ang values/input na tatanggapin ng function.
+
+Halimbawa ng paggamit:
+
+add(5, 3);
+
+5 -> mapupunta sa a
+3 -> mapupunta sa b
+
+
+3. DIFFERENCE NG () AT (void)
+------------------------------
+
+Sa C:
+
+int main()
+
+Ibig sabihin:
+- Hindi explicitly dineclare kung anong parameters ang tinatanggap.
+
+Samantalang:
+
+int main(void)
+
+Ibig sabihin:
+- Explicitly walang parameter na tinatanggap.
+
+Mas magandang gamitin sa lesson natin:
+
+int main(void)
+
+Tandaan:
+void = walang parameter.
+
+
+4. BASIC printf()
+-----------------
+
+Halimbawa:
+
+printf("Hello, Jed!\n");
+
+Ang printf() ay ginagamit para mag-print o mag-display ng text sa terminal.
+
+Kailangan ng:
+
+#include <stdio.h>
+
+
+5. ANO ANG \n?
+---------------
+
+Ang \n ay new line.
+
+Halimbawa:
+
+printf("My name is Jed\n");
+printf("I am learning C\n");
+
+Output:
+
+My name is Jed
+I am learning C
+
+
+6. LESSON 1 TASK
+----------------
+
+Task:
+
+Gumawa ng C program na mag-output ng:
+
+My name is Jed.
+I am learning C.
+I want to become an IT programmer.
+
+
+7. SOLUTION 1 - MULTIPLE printf()
+---------------------------------
+
+#include <stdio.h>
+
+int main(void)
+{
+    printf("My name is Jed\n");
+    printf("I am learning C\n");
+    printf("I want to become an IT programmer\n");
+
+    return 0;
+}
+
+Ito ang mas malinis at madaling basahin para sa beginner.
+
+
+8. SOLUTION 2 - ONE printf()
+----------------------------
+
+#include <stdio.h>
+
+int main(void)
+{
+    printf("My name is Jed\nI want to become an IT programmer\nI am learning C\n");
+
+    return 0;
+}
+
+Valid din ito.
+
+Isang printf() lang ang ginamit pero maraming output lines dahil sa \n.
+
+Correction:
+Nag-iba lang ang order ng output kumpara sa original task.
+
+Original order:
+
+My name is Jed
+I am learning C
+I want to become an IT programmer
+
+
+9. LESSON 1 SUMMARY
+-------------------
+
+Natutunan:
+
+- Basic structure ng C program
+- #include <stdio.h>
+- int main(void)
+- Ano ang parameter
+- Difference ng () at (void)
+- Basic printf()
+- \n para sa new line
+- Puwedeng gumamit ng maraming printf()
+- Puwedeng isang printf() lang na may maraming \n
+
+NOTE:
+Hindi pa kasama sa lesson na ito ang:
+%d
+%f
+%s
+
+Pag-aaralan ang mga iyon kapag nasa variables/data types na tayo.
+
+END OF LESSON 1

@@ -1,0 +1,333 @@
+C PROGRAMMING - LESSON 3
+USER INPUT WITH scanf()
+===========================
+
+Topic:
+Basic user input using scanf()
+
+--------------------------------------------------
+1. printf() VS scanf()
+--------------------------------------------------
+
+printf()
+- Ginagamit para magpakita ng output sa terminal.
+
+Example:
+
+printf("Hello\n");
+
+scanf()
+- Ginagamit para tumanggap ng input mula sa keyboard.
+
+Example:
+
+scanf("%d", &age);
+
+Quick memory:
+
+printf() = output
+scanf()  = input
+
+
+--------------------------------------------------
+2. BASIC scanf() EXAMPLE
+--------------------------------------------------
+
+#include <stdio.h>
+
+int main(void)
+{
+    int age;
+
+    printf("Enter your age: ");
+    scanf("%d", &age);
+
+    printf("Your age is %d\n", age);
+
+    return 0;
+}
+
+Possible output:
+
+Enter your age: 33
+Your age is 33
+
+
+--------------------------------------------------
+3. int age;
+--------------------------------------------------
+
+Example:
+
+int age;
+
+Ito ay declaration.
+
+Ibig sabihin:
+- Gumawa tayo ng variable na pangalan ay age.
+- Ang data type niya ay int.
+- Wala pa tayong sariling value na inilalagay.
+
+Kapag nag-input ang user gamit ang scanf(),
+doon mapupunta ang value.
+
+
+--------------------------------------------------
+4. scanf("%d", &age);
+--------------------------------------------------
+
+Example:
+
+scanf("%d", &age);
+
+Hatiin natin:
+
+scanf
+- Function para kumuha ng input.
+
+"%d"
+- Format specifier para sa int.
+
+&age
+- Dito ilalagay ni scanf() ang value na tinype ng user.
+
+Example:
+
+User types:
+33
+
+Pagkatapos ng scanf():
+
+age = 33
+
+
+--------------------------------------------------
+5. ANO ANG & SA &age?
+--------------------------------------------------
+
+Sa ngayon, tandaan muna:
+
+scanf("%d", &age);
+
+Kailangan ng scanf() ang & bago ang basic variable gaya ng int age.
+
+Simple memory:
+
+printf("%d", age);
+scanf("%d", &age);
+
+printf:
+age lang
+
+scanf:
+&age
+
+Mas malalim na explanation tungkol sa address/pointers
+ay pag-aaralan natin sa pointer lesson.
+
+
+--------------------------------------------------
+6. scanf() FORMAT SPECIFIERS
+--------------------------------------------------
+
+int
+scanf("%d", &age);
+
+float
+scanf("%f", &height);
+
+double
+scanf("%lf", &weight);
+
+char
+scanf(" %c", &initial);
+
+Quick guide:
+
+int     -> %d
+float   -> %f
+double  -> %lf
+char    -> %c
+
+
+--------------------------------------------------
+7. IMPORTANT: printf() VS scanf() FOR double
+--------------------------------------------------
+
+Sa printf():
+
+double value;
+printf("%f", value);
+
+Sa scanf():
+
+double value;
+scanf("%lf", &value);
+
+Tandaan:
+
+printf double -> %f
+scanf double  -> %lf
+
+
+--------------------------------------------------
+8. EXERCISE NA GINAWA
+--------------------------------------------------
+
+Task:
+
+Gumawa ng program na hihingi ng age sa user.
+
+Code:
+
+#include <stdio.h>
+
+int main(void)
+{
+    int age;
+
+    printf("Enter your age: ");
+    scanf("%d", &age);
+
+    printf("Your age is %d\n", age);
+
+    return 0;
+}
+
+Example:
+
+Enter your age: 33
+Your age is 33
+
+
+--------------------------------------------------
+9. VARIABLE LOCATION
+--------------------------------------------------
+
+Nagawa natin minsan:
+
+int age;
+
+int main(void)
+{
+    ...
+}
+
+Valid ito dahil global variable si age.
+
+Pero habang foundation lessons pa,
+mas magandang gamitin muna:
+
+int main(void)
+{
+    int age;
+
+    ...
+}
+
+Ito ay local variable.
+
+Mas simple ito at mas madaling sundan habang beginner.
+
+
+--------------------------------------------------
+10. FLOW NG PROGRAM
+--------------------------------------------------
+
+Step 1:
+
+int age;
+
+Gumawa ng lalagyan para sa whole number.
+
+
+Step 2:
+
+printf("Enter your age: ");
+
+Humihingi tayo ng input sa user.
+
+
+Step 3:
+
+scanf("%d", &age);
+
+Binabasa ang number na tinype ng user
+at inilalagay sa age.
+
+
+Step 4:
+
+printf("Your age is %d\n", age);
+
+Ipinapakita ang value ng age.
+
+
+--------------------------------------------------
+11. QUICK MEMORY GUIDE
+--------------------------------------------------
+
+OUTPUT:
+
+printf(...);
+
+
+INPUT:
+
+scanf(...);
+
+
+INT INPUT:
+
+int age;
+scanf("%d", &age);
+
+
+FLOAT INPUT:
+
+float height;
+scanf("%f", &height);
+
+
+DOUBLE INPUT:
+
+double weight;
+scanf("%lf", &weight);
+
+
+CHAR INPUT:
+
+char initial;
+scanf(" %c", &initial);
+
+
+--------------------------------------------------
+12. LESSON 3 CHECKPOINT
+--------------------------------------------------
+
+Natutunan sa Lesson 3:
+
+- Difference ng printf() at scanf()
+- Paano tumanggap ng keyboard input
+- int age; bilang declaration
+- scanf("%d", &age);
+- Gamit ng & sa scanf() sa basic variables
+- %d para sa int input
+- %f para sa float input
+- %lf para sa double input
+- %c para sa char input
+- Basic flow ng input -> variable -> output
+- Mas magandang local variable muna habang nag-aaral
+
+Current foundation flow:
+
+Lesson 1:
+printf() at basic C structure
+
+Lesson 2:
+variables at basic data types
+
+Lesson 3:
+scanf() at user input
+
+END OF LESSON 3
