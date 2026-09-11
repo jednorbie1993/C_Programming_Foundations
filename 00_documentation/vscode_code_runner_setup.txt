@@ -1,0 +1,210 @@
+C PROGRAMMING FOUNDATIONS
+VS CODE CLEAN TERMINAL SETUP
+====================================
+
+Goal:
+Make C programs run using Ctrl + Alt + N with a clean terminal,
+so scanf() input is easy to use and the terminal is not cluttered.
+
+1. EXTENSION INSTALLED
+----------------------
+
+Extension:
+Code Runner
+
+Publisher:
+Jun Han
+
+Purpose:
+- Lets us run C files quickly.
+- Shortcut used: Ctrl + Alt + N
+- Can run programs directly inside the VS Code Terminal.
+
+To find it:
+1. Press Ctrl + Shift + X
+2. Search: Code Runner
+3. Install "Code Runner" by Jun Han
+
+
+2. SETTINGS SEARCHED
+--------------------
+
+Open VS Code Settings:
+Ctrl + ,
+
+Search and set these:
+
+A. Code Runner: Run In Terminal
+   ON
+
+Why:
+scanf() needs keyboard input, so the program must run in the Terminal.
+
+B. Code Runner: Show Execution Message
+   OFF
+
+Why:
+Removes Code Runner execution/status messages.
+
+C. Code Runner: Preserve Focus
+   OFF
+
+Why:
+Moves focus to the Terminal when the program runs, making input easier.
+
+
+3. TERMINAL PROFILE
+-------------------
+
+Press:
+Ctrl + Shift + P
+
+Search:
+Terminal: Select Default Profile
+
+Choose:
+Command Prompt
+
+Final setting:
+"terminal.integrated.defaultProfile.windows": "Command Prompt"
+
+Why:
+Command Prompt gives a simpler C learning setup than PowerShell.
+
+
+4. CLEAN CODE RUNNER COMMAND
+----------------------------
+
+Open Settings JSON:
+
+Ctrl + Shift + P
+
+Search:
+Preferences: Open User Settings (JSON)
+
+For C, we used:
+
+"code-runner.executorMap": {
+    "c": "cls && cd /d \"$dir\" && gcc \"$fileName\" -o \"$fileNameWithoutExt.exe\" && \"$fileNameWithoutExt.exe\" && echo."
+}
+
+Meaning:
+
+cls
+- Clears the old terminal output before running.
+
+cd /d "$dir"
+- Goes to the folder where the current C file is located.
+
+gcc "$fileName" -o "$fileNameWithoutExt.exe"
+- Compiles the current .c file using GCC.
+
+"$fileNameWithoutExt.exe"
+- Runs the compiled program.
+
+echo.
+- Adds one blank line after the program finishes.
+
+
+5. FINAL SETTINGS.JSON USED
+---------------------------
+
+{
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "workbench.colorTheme": "Solarized Dark",
+    "update.mode": "none",
+    "explorer.confirmDelete": false,
+
+    "editor.inlineSuggest.edits.allowCodeShifting": "never",
+
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+
+    "code-runner.runInTerminal": true,
+    "code-runner.showExecutionMessage": false,
+    "code-runner.preserveFocus": false,
+
+    "code-runner.executorMap": {
+        "c": "cls && cd /d \"$dir\" && gcc \"$fileName\" -o \"$fileNameWithoutExt.exe\" && \"$fileNameWithoutExt.exe\" && echo."
+    },
+
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+
+        "Command Prompt": {
+            "path": "C:\\WINDOWS\\System32\\cmd.exe",
+            "args": []
+        },
+
+        "Git Bash": {
+            "source": "Git Bash",
+            "icon": "terminal-git-bash"
+        }
+    },
+
+    "terminal.integrated.defaultProfile.windows": "Command Prompt"
+}
+
+
+6. HOW TO RUN C LESSONS
+-----------------------
+
+1. Open the .c file.
+2. Save with Ctrl + S.
+3. Press Ctrl + Alt + N.
+4. Code Runner will:
+   - clear the terminal
+   - compile the C file
+   - run the program
+   - allow scanf() input
+   - add a blank line after the output
+
+Example:
+
+Enter your age: 33
+your age is 33
+
+C:\...\03_scanf>
+
+
+7. IMPORTANT NOTE
+-----------------
+
+For our C lessons, use:
+
+Ctrl + Alt + N
+= Code Runner
+
+Avoid using the C/C++ Debug Run button for now because it uses a
+different build/debug configuration and can make the terminal output
+more complicated while learning basic C.
+
+
+8. INLINE / GHOST CODE SUGGESTIONS
+----------------------------------
+
+For learning C, we disabled GitHub Copilot suggestions.
+
+Current setting:
+
+"github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+}
+
+Reason:
+We want to type the C syntax ourselves during foundation lessons
+instead of pressing Tab to accept complete code suggestions.
+
+====================================
+END OF NOTES
+====================================
