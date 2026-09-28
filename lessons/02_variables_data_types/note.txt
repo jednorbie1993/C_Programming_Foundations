@@ -1,0 +1,306 @@
+C PROGRAMMING - LESSON 2
+VARIABLES AND BASIC DATA TYPES
+
+========================================
+1. VARIABLE
+========================================
+
+Ang variable ay parang lalagyan ng value sa program.
+
+Example:
+
+int age = 33;
+
+int  = data type
+age  = variable name
+33   = value
+
+
+========================================
+2. BASIC DATA TYPES
+========================================
+
+int
+- Para sa whole numbers.
+- Example:
+
+int age = 33;
+
+printf format:
+%d
+
+
+float
+- Para sa decimal numbers.
+- Usually around 6-7 decimal digits ang precision.
+- Mas maliit kaysa double.
+
+Example:
+
+float height = 176.5f;
+
+Ang "f" sa 176.5f ay nagsasabing float literal ang value.
+
+printf format:
+%f
+
+
+double
+- Para rin sa decimal numbers.
+- Mas accurate kaysa float.
+- Usually around 15-16 decimal digits ang precision.
+
+Example:
+
+double weight = 70.5;
+
+Kapag walang "f" ang decimal literal gaya ng 70.5,
+default ito bilang double.
+
+printf format:
+%f
+
+
+char
+- Para sa isang character lamang.
+- Gumagamit ng single quote.
+
+Example:
+
+char initial = 'J';
+
+printf format:
+%c
+
+
+string / char array
+- Para sa salita o maraming characters.
+- Gumagamit ng double quote.
+
+Example:
+
+char name[] = "Jed";
+
+printf format:
+%s
+
+
+========================================
+3. FORMAT SPECIFIERS
+========================================
+
+int       -> %d
+float     -> %f
+double    -> %f
+char      -> %c
+string    -> %s
+
+
+Example:
+
+int age = 33;
+float height = 176.5f;
+double weight = 70.5;
+char initial = 'J';
+char name[] = "Jed";
+
+printf("%d\n", age);
+printf("%f\n", height);
+printf("%f\n", weight);
+printf("%c\n", initial);
+printf("%s\n", name);
+
+
+========================================
+4. %f VS %.1f
+========================================
+
+%f
+- Default na nagpapakita ng maraming decimal places.
+
+Example:
+
+float height = 176.5f;
+
+printf("%f\n", height);
+
+Possible output:
+
+176.500000
+
+
+%.1f
+- Isang digit lang pagkatapos ng decimal point.
+
+printf("%.1f\n", height);
+
+Output:
+
+176.5
+
+
+Other examples:
+
+%.2f -> 176.50
+%.3f -> 176.500
+
+
+========================================
+5. FLOAT VS DOUBLE
+========================================
+
+float:
+- Decimal number
+- Usually 4 bytes
+- Around 6-7 decimal digits precision
+
+double:
+- Decimal number
+- Usually 8 bytes
+- Around 15-16 decimal digits precision
+
+Example:
+
+float a = 3.1415926535f;
+double b = 3.1415926535;
+
+Ang double ay mas accurate kaysa float.
+
+
+========================================
+6. DECLARATION
+========================================
+
+Declaration = gumagawa ng variable.
+
+Example:
+
+int age;
+
+Wala pa tayong sariling value na ibinigay dito.
+
+
+========================================
+7. INITIALIZATION
+========================================
+
+Initialization = gumagawa ng variable at binibigyan agad ng value.
+
+Example:
+
+int age = 33;
+float height = 176.5f;
+char initial = 'J';
+
+
+========================================
+8. PAGPAPALIT NG VALUE NG VARIABLE
+========================================
+
+Example:
+
+int age = 33;
+
+age = 34;
+
+Hindi na kailangang ulitin ang "int".
+
+TAMA:
+
+int age = 33;
+age = 34;
+
+Hindi ito normal na paraan:
+
+int age = 33;
+int age = 34;
+
+Dahil nire-redeclare ulit ang parehong variable.
+
+
+========================================
+9. VARIABLE NAMING RULES
+========================================
+
+Valid examples:
+
+int age;
+int myAge;
+int player_hp;
+int score2;
+
+Invalid examples:
+
+int 2age;       // bawal magsimula sa number
+int my age;     // bawal ang space
+int int;        // reserved keyword ang int
+
+Case-sensitive ang C.
+
+Example:
+
+int age = 33;
+int Age = 40;
+
+Magkaibang variable ang age at Age.
+
+
+========================================
+10. PRACTICE PROGRAM
+========================================
+
+#include <stdio.h>
+
+int main(void)
+{
+    int age = 33;
+    char initial = 'J';
+    float height = 176.5f;
+
+    age = 34;
+
+    printf("My initial is %c\n", initial);
+    printf("My age is %d\n", age);
+    printf("My height is %.1f\n", height);
+
+    return 0;
+}
+
+
+Output:
+
+My initial is J
+My age is 34
+My height is 176.5
+
+
+========================================
+LESSON 2 SUMMARY
+========================================
+
+Important to remember:
+
+int       -> whole number       -> %d
+float     -> decimal            -> %f
+double    -> more precise decimal -> %f
+char      -> one character      -> %c
+string    -> text               -> %s
+
+float example:
+176.5f
+
+double example:
+176.5
+
+char example:
+'J'
+
+string example:
+"Jed"
+
+Changing a variable:
+
+int age = 33;
+age = 34;
+
+END OF LESSON 2
